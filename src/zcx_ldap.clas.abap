@@ -1,0 +1,34 @@
+class ZCX_LDAP definition
+  public
+  inheriting from CX_STATIC_CHECK
+  final
+  create public .
+
+public section.
+
+  constants SERVERID_NO_EXIST type SOTR_CONC value '0022489EB07D1EED9F8B83FA245804C4' ##NO_TEXT.
+  constants ERROR_CONNECT_TO_SERVER type SOTR_CONC value '0022489EB07D1EED9F8B859E2CA284C4' ##NO_TEXT.
+  constants ERROR_QUERY type SOTR_CONC value '0022489EB07D1EED9F8C6777CE9204C4' ##NO_TEXT.
+  constants PRINCIPALNAME_NOT_EXIST type SOTR_CONC value '0022489EB07D1EED9F8C83A47B4204C4' ##NO_TEXT.
+
+  methods CONSTRUCTOR
+    importing
+      !TEXTID like TEXTID optional
+      !PREVIOUS like PREVIOUS optional .
+protected section.
+private section.
+ENDCLASS.
+
+
+
+CLASS ZCX_LDAP IMPLEMENTATION.
+
+
+  method CONSTRUCTOR.
+CALL METHOD SUPER->CONSTRUCTOR
+EXPORTING
+TEXTID = TEXTID
+PREVIOUS = PREVIOUS
+.
+  endmethod.
+ENDCLASS.

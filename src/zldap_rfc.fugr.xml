@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_FUGR" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <AREAT>LDAP - Funciones RFC</AREAT>
+   <INCLUDES>
+    <SOBJ_NAME>LZLDAP_RFCTOP</SOBJ_NAME>
+    <SOBJ_NAME>SAPLZLDAP_RFC</SOBJ_NAME>
+   </INCLUDES>
+   <FUNCTIONS>
+    <item>
+     <FUNCNAME>ZCA_RFC_USER_CREATED_BY_EMAIL</FUNCNAME>
+     <REMOTE_CALL>R</REMOTE_CALL>
+     <SHORT_TEXT>CPS - Devuelve usuario creado a traves de un email</SHORT_TEXT>
+     <IMPORT>
+      <RSIMP>
+       <PARAMETER>IV_MAIL</PARAMETER>
+       <TYP>STRING</TYP>
+      </RSIMP>
+     </IMPORT>
+     <EXPORT>
+      <RSEXP>
+       <PARAMETER>EV_USER</PARAMETER>
+       <TYP>SYUNAME</TYP>
+      </RSEXP>
+     </EXPORT>
+     <EXCEPTION>
+      <RSEXC>
+       <EXCEPTION>FAILURE_CONNECT_LDAP</EXCEPTION>
+      </RSEXC>
+      <RSEXC>
+       <EXCEPTION>USERNAME_NOT_EXIST</EXCEPTION>
+      </RSEXC>
+     </EXCEPTION>
+     <DOCUMENTATION>
+      <RSFDO>
+       <PARAMETER>IV_MAIL</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Mail</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>EV_USER</PARAMETER>
+       <KIND>P</KIND>
+       <STEXT>Usuario</STEXT>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>FAILURE_CONNECT_LDAP</PARAMETER>
+       <KIND>X</KIND>
+      </RSFDO>
+      <RSFDO>
+       <PARAMETER>USERNAME_NOT_EXIST</PARAMETER>
+       <KIND>X</KIND>
+      </RSFDO>
+     </DOCUMENTATION>
+    </item>
+   </FUNCTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>
